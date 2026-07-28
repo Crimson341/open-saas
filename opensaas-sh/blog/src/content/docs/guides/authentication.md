@@ -92,3 +92,9 @@ To create a GitHub OAuth app and get your GitHub API keys, follow the instructio
 To create a Discord OAuth app and get your Discord API keys, follow the instructions in [Wasp's Discord Auth docs](https://wasp.sh/docs/auth/social-auth/discord#3-creating-a-discord-app)
 
 Again, Wasp will take care of the rest and update your AuthUI components accordingly.
+
+:::tip[Social auth doesn't require an email sender]
+An "email sender" provider is only needed by the `email` auth method. If you want to use just social auth (Google, GitHub, and/or Discord), you can remove the `email` method from your auth config and you don't have to set up an email provider for authentication.
+
+Keep in mind that Open SaaS also uses `emailSender` outside of auth (e.g. the payment webhook emails users when their subscription is cancelled), so you'll still want a production-ready provider if you keep that code.
+:::
